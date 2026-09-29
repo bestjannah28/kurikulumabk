@@ -3,892 +3,615 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pertemuan 1: Konsep Dasar BK bagi Anak Berkebutuhan Khusus - Bimbingan dan Konseling</title>
-  <link rel="stylesheet" href="style.css">
+  <title>RPS Mata Kuliah: Penulisan Karya Ilmiah</title>
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
   <style>
-    / Variasi Tema Cerah Gen Z (Bright Palette) dengan Aksen Ungu, Oranye, dan Biru /
     :root {
-      --gz-purple: #7c3aed;
-      --gz-purple-light: #f3e8ff;
-      --gz-orange: #f97316;
-      --gz-orange-light: #ffedd5;
-      --gz-blue: #0284c7;
-      --gz-blue-light: #e0f2fe;
-      --gz-bg-bright: #fafcfb;
-      --gz-text-dark: #0f172a;
+      --bg-body: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --text-main: #0F172A;
+      --text-muted: #475569;
+      --primary: #0284C7;
+      --primary-dark: #0369A1;
+      --primary-light: #E0F2FE;
+      --accent-mint: #10B981;
+      --accent-orange: #EA580C;
+      --border-dark: #0F172A;
+      --border-light: #CBD5E1;
+      --shadow-solid: 4px 4px 0px #0F172A;
       --radius-sm: 6px;
-      --radius-md: 10px;
-      --radius-lg: 16px;
-      --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+      --radius-md: 12px;
     }
 
-     {
+    * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      background-color: var(--gz-bg-bright);
-      color: var(--gz-text-dark);
-      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.75;
-      font-size: 1.05rem;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 1.5rem;
+      -webkit-font-smoothing: antialiased;
     }
 
-    / Penataan Pembatas Layar agar tidak terlalu lebar /
-    .site-header {
-      background: #ffffff;
-      border-bottom: 1.5px solid #e2e8f0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .nav-container {
-      max-width: 1080px;
+    .rps-container {
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 1rem 2rem;
+    }
+
+    /* ACTION BAR */
+    .action-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .content-wrapper {
-      max-width: 1080px;
-      margin: 2rem auto;
-      padding: 0 2rem;
-    }
-
-    .brand-badge {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-weight: 800;
-      font-size: 1.15rem;
-    }
-
-    .view-tabs {
-      display: flex;
-      gap: 0.5rem;
-    }
-
-    .tab-btn {
-      background: #f1f5f9;
-      border: 1px solid #cbd5e1;
-      padding: 0.65rem 1.25rem;
-      border-radius: var(--radius-sm);
-      font-weight: 700;
-      font-size: 0.95rem;
-      color: #475569;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .tab-btn.active {
-      background: var(--gz-purple);
-      color: #ffffff;
-      border-color: var(--gz-purple);
-    }
-
-    / Pill Badges /
-    .pill {
-      padding: 0.35rem 0.95rem;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      display: inline-block;
-    }
-
-    .badge-purple {
-      background: var(--gz-purple-light);
-      color: var(--gz-purple);
-      font-weight: 800;
-    }
-
-    .badge-orange {
-      background: var(--gz-orange-light);
-      color: #c2410c;
-      font-weight: 800;
-    }
-
-    .badge-blue {
-      background: var(--gz-blue-light);
-      color: var(--gz-blue);
-      font-weight: 800;
-    }
-
-    / Kotak Judul Utama (Hero Box) dengan Space/Padding yang Lega /
-    .hero-box {
-      border-radius: var(--radius-lg);
-      padding: 3rem 2.75rem; / Space lega di pinggir antara border dan tulisan /
-      margin-bottom: 2.25rem;
-      border: 1.5px solid #e2e8f0;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
-    }
-
-    .hero-box h1 {
-      font-size: clamp(1.85rem, 3.2vw, 2.35rem);
-      line-height: 1.35;
-      margin: 1.25rem 0 0.85rem 0;
-    }
-
-    .hero-box p {
-      font-size: 1.1rem;
-      color: #334155;
-      margin: 0;
-      line-height: 1.7;
-    }
-
-    .hero-meta {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      margin-top: 1.75rem;
-      padding-top: 1.25rem;
-      border-top: 1px solid rgba(226, 232, 240, 0.8);
-      font-size: 0.95rem;
-      color: #475569;
-      font-weight: 600;
-    }
-
-    / Kartu Konten dengan Padding/Space Nyaman /
-    .content-card {
-      background: #ffffff;
-      border: 1.5px solid #e2e8f0;
-      border-radius: var(--radius-lg);
-      padding: 2.75rem 2.5rem; / Jarak pinggir tulisan ke kotak dibuat lapang /
-      margin-bottom: 2.25rem;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
-    }
-
-    .content-card h2 {
-      font-size: 1.65rem;
-      color: #0f172a;
-      margin-top: 1rem;
-      margin-bottom: 1.15rem;
-      line-height: 1.4;
-    }
-
-    .quote-box {
-      border-left: 5px solid var(--gz-blue);
-      background: #f0f9ff;
-      padding: 1.35rem 1.75rem;
-      margin: 1.75rem 0;
-      border-radius: 0 var(--radius-md) var(--radius-md) 0;
-      font-size: 1.05rem;
-      line-height: 1.75;
-    }
-
-    .grid-two-col {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.75rem;
-    }
-
-    .accent-card {
-      padding: 1.65rem;
-      border-radius: var(--radius-md);
-    }
-
-    .card-purple-bright {
-      border-left: 5px solid var(--gz-purple);
-      background: #faf5ff;
-    }
-
-    .card-orange-bright {
-      border-left: 5px solid var(--gz-orange);
-      background: #fff7ed;
-    }
-
-    .card-blue-bright {
-      border-left: 5px solid var(--gz-blue);
-      background: #f0f9ff;
-    }
-
-    / Presentasi Slide Dosen /
-    .presentation-frame-bright {
-      background: #ffffff;
-      color: #1e293b;
-      border: 2px solid #e2e8f0;
-      border-radius: var(--radius-lg);
-      padding: 3rem 3rem 2.25rem 3rem;
-      min-height: 560px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      box-shadow: var(--shadow-lg);
-    }
-
-    .presentation-frame-bright h2 {
-      color: #0f172a;
-      font-size: clamp(2rem, 3.8vw, 2.5rem);
       margin-bottom: 1.5rem;
-      margin-top: 0.75rem;
-    }
-
-    .presentation-frame-bright .slide-body {
-      font-size: 1.25rem;
-      line-height: 1.8;
-      color: #334155;
-      flex-grow: 1;
-    }
-
-    .presentation-frame-bright .slide-body p {
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-
-    .presentation-frame-bright .slide-body li {
-      margin-bottom: 1rem;
-      position: relative;
-      padding-left: 2rem;
-      list-style: none;
-    }
-
-    .presentation-frame-bright .slide-body li::before {
-      content: "✦";
-      position: absolute;
-      left: 0;
-      color: var(--gz-purple);
-      font-weight: 800;
-      font-size: 1.15rem;
-    }
-
-    .speaker-notes-bright {
-      margin-top: 1.5rem;
-      background: #f8fafc;
-      border-left: 4px solid var(--gz-orange);
-      padding: 1.1rem 1.4rem;
-      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-      font-size: 1rem;
-      color: #475569;
-      display: none;
-    }
-
-    .slide-controls {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-top: 2px solid #f1f5f9;
-      padding-top: 1.75rem;
-      margin-top: 2rem;
-      gap: 1rem;
       flex-wrap: wrap;
+      gap: 1rem;
     }
 
-    .btn-ctrl {
-      padding: 0.75rem 1.4rem;
-      font-size: 1rem;
-      font-weight: 700;
-      border-radius: var(--radius-sm);
+    .badge-course {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--primary-light);
+      border: 2px solid var(--border-dark);
+      box-shadow: 2px 2px 0 var(--border-dark);
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.9rem;
+      color: var(--primary-dark);
+    }
+
+    .btn {
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      transition: all 0.2s;
-      border: none;
+      gap: 0.5rem;
+      padding: 0.65rem 1.25rem;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 2px solid var(--border-dark);
+      box-shadow: var(--shadow-solid);
+      transition: all 0.15s ease-in-out;
+      text-decoration: none;
+      background-color: var(--card-bg);
+      color: var(--text-main);
     }
 
-    .btn-ctrl.secondary {
-      background: #f1f5f9;
-      color: #475569;
-      border: 1px solid #cbd5e1;
+    .btn:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px var(--border-dark);
     }
 
-    .btn-ctrl.secondary:hover {
-      background: #e2e8f0;
-      color: #0f172a;
+    .btn-primary {
+      background-color: var(--primary);
+      color: #FFFFFF;
     }
 
-    / Kolom Jawaban Mahasiswa (LKM) /
-    .large-answer-area {
-      width: 100%;
-      min-height: 240px;
-      padding: 1.35rem;
-      font-family: inherit;
-      font-size: 1.05rem;
-      line-height: 1.7;
-      border: 2px solid #cbd5e1;
+    /* KARTU DOKUMEN RPS */
+    .rps-card {
+      background-color: var(--card-bg);
+      border: 3px solid var(--border-dark);
       border-radius: var(--radius-md);
-      background: #ffffff;
-      box-shadow: inset 0 2px 4px rgba(0,0,0,0.03);
-      resize: vertical;
-      margin-top: 1rem;
-      margin-bottom: 1.5rem;
-      box-sizing: border-box;
+      box-shadow: 8px 8px 0px var(--border-dark);
+      padding: 2.5rem;
+      margin-bottom: 2rem;
     }
 
-    .large-answer-area:focus {
-      border-color: var(--gz-purple);
-      outline: none;
-      box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+    /* KOP DOKUMEN */
+    .header-doc {
+      text-align: center;
+      border-bottom: 3px double var(--border-dark);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
 
-    .quiz-option {
+    .header-doc h1 {
+      font-size: 1.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.35rem;
+    }
+
+    .header-doc h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.35rem;
+    }
+
+    .header-doc p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* TABEL IDENTITAS & CPL */
+    .table-section {
       width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.75rem;
+      font-size: 0.95rem;
+    }
+
+    .table-section th, .table-section td {
+      border: 1.5px solid var(--border-dark);
+      padding: 0.75rem 1rem;
       text-align: left;
-      padding: 1.1rem 1.35rem;
-      margin-bottom: 0.85rem;
-      background: #ffffff;
-      border: 1.5px solid #cbd5e1;
-      border-radius: var(--radius-md);
-      cursor: pointer;
-      font-size: 1rem;
-      line-height: 1.6;
-      font-family: inherit;
-      transition: all 0.2s ease;
+      vertical-align: top;
     }
 
-    .quiz-option:hover {
-      border-color: var(--gz-purple);
-      background: #fbf8ff;
+    .table-section th {
+      background-color: var(--primary-light);
+      color: var(--primary-dark);
+      font-weight: 800;
+      width: 25%;
     }
 
-    .quiz-feedback {
-      display: none;
+    /* MATRIKS RENCANA MINGGUAN */
+    .matrix-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin: 2rem 0 1rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-main);
+      border-bottom: 2px solid var(--border-dark);
+      padding-bottom: 0.5rem;
+    }
+
+    .table-matrix {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin-bottom: 2rem;
+    }
+
+    .table-matrix th, .table-matrix td {
+      border: 1.5px solid var(--border-dark);
+      padding: 0.7rem 0.8rem;
+      vertical-align: top;
+      line-height: 1.5;
+    }
+
+    .table-matrix thead th {
+      background-color: var(--border-dark);
+      color: #FFFFFF;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .table-matrix tbody tr:nth-child(even) {
+      background-color: #F8FAFC;
+    }
+
+    .table-matrix tr.eval-row {
+      background-color: #FEF3C7 !important;
+      font-weight: 600;
+    }
+
+    .col-center {
+      text-align: center;
+    }
+
+    /* DAFTAR REFERENSI */
+    .ref-box {
+      background: #F1F5F9;
+      border: 2px solid var(--border-dark);
+      border-radius: var(--radius-sm);
       padding: 1.25rem 1.5rem;
-      border-radius: var(--radius-md);
-      margin-top: 1.25rem;
-      font-size: 1rem;
-      line-height: 1.7;
+      margin-top: 1rem;
+      font-size: 0.9rem;
     }
 
-    / Aturan Visibilitas Tab & Slide /
-    .view-section {
-      display: none;
-    }
-    .view-section.active {
-      display: block;
-    }
-    .slide-item {
-      display: none;
-    }
-    .slide-item.active {
-      display: block;
+    .ref-box ol {
+      padding-left: 1.5rem;
     }
 
+    .ref-box li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* PENGESAHAN */
+    .sign-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .sign-box {
+      border: 1.5px solid var(--border-dark);
+      border-radius: var(--radius-sm);
+      padding: 1.2rem;
+      background: #FFFFFF;
+    }
+
+    /* PRINT STYLES */
     @media print {
-      .site-header, .print-action-bar, .sound-toggle-bar, .slide-controls, nav {
+      body {
+        background-color: #FFFFFF !important;
+        padding: 0 !important;
+        font-size: 9.5pt;
+      }
+      .no-print {
         display: none !important;
       }
-      .view-section {
-        display: none !important;
-      }
-      #worksheet-view {
-        display: block !important;
-      }
-      .content-wrapper {
-        max-width: 100% !important;
-        margin: 0 !important;
+      .rps-card {
+        border: none !important;
+        box-shadow: none !important;
         padding: 0 !important;
       }
-      body {
-        background: #ffffff !important;
+      .table-matrix th, .table-matrix td,
+      .table-section th, .table-section td {
+        border: 1px solid #000 !important;
+        padding: 4px 6px !important;
+      }
+      .table-matrix thead th {
+        background-color: #E2E8F0 !important;
+        color: #000 !important;
+      }
+      .table-section th {
+        background-color: #F1F5F9 !important;
+        color: #000 !important;
+      }
+      .table-matrix tr.eval-row {
+        background-color: #FFFBEB !important;
+      }
+      .sign-box {
+        border: 1px solid #000 !important;
       }
     }
   </style>
-  <script src="auth.js"></script>
 </head>
 <body>
 
-  <!-- ==================== TOP NAVIGATION BAR ==================== -->
-  <header class="site-header">
-    <div class="nav-container">
-      <div class="brand-badge">
-        <span style="color: var(--gz-purple);">BIMBINGAN KONSELING ABK</span>
-        <span class="pill badge-purple">Pertemuan 1</span>
+  <div class="rps-container">
+
+    <!-- ACTION BAR -->
+    <div class="action-bar no-print">
+      <div class="badge-course">
+        <span>📋</span> DOKUMEN KURIKULUM & RENCANA PEMBELAJARAN
       </div>
-      <nav class="view-tabs" role="tablist">
-        <button class="tab-btn active" onclick="switchView('reading-view', this)">Modul Bacaan Lengkap</button>
-        <button class="tab-btn" onclick="switchView('worksheet-view', this)">Lembar Kerja &amp; Kasus Luas</button>
-        <button class="tab-btn" onclick="switchView('presentation-view', this)">Presentasi Dosen</button>
-      </nav>
+      <button class="btn btn-primary" onclick="window.print()">
+        <span>🖨️</span> Cetak / Simpan PDF (RPS)
+      </button>
     </div>
-  </header>
 
-  <main class="content-wrapper">
-
-    <!-- =========================================================================
-         BAGIAN 1: WEB PAGE PRESENTATION (BACAAN MANDIRI DOSEN & MAHASISWA)
-         ========================================================================= -->
-    <section id="reading-view" class="view-section active">
+    <!-- MAIN RPS CARD -->
+    <div class="rps-card">
       
-      <!-- HERO BANNER (DENGAN SPACE PINGGIR YANG LEGA) -->
-      <header class="hero-box" style="background: linear-gradient(135deg, #f3e8ff 0%, #ffedd5 50%, #e0f2fe 100%);">
-        <span class="section-label pill badge-purple">Modul Keilmuan BK ABK</span>
-        <h1 style="color: var(--gz-text-dark);">Hakikat Perkembangan Manusia dan Konsep Dasar Anak Berkebutuhan Khusus</h1>
-        <p>Kajian bimbingan dan konseling mendalam: hukum dinamika perkembangan individu, batasan konseptual ABK, pergeseran paradigma dari model defisit medis (Special Education) ke model kebutuhan humanis (Special Needs Education), serta signifikansi intervensi deteksi dini.</p>
-        <div class="hero-meta">
-          <span>⏱ Durasi: 2 SKS (100 Menit)</span>
-          <span>📚 Rujukan: Rahmi Dwi Febriani, Triyono, Puji Gusri Handayani, &amp; Hafiz Hidayat (2024, Bab I)</span>
-          <span>🎯 Capaian: Analisis Konsep Perkembangan &amp; Rekonseptualisasi Paradigma ABK</span>
-        </div>
-      </header>
-
-      <!-- SESI 1: PENDAHULUAN (10 MENIT) -->
-      <article class="content-card">
-        <span class="section-label pill badge-orange">Fase 1: Orientasi &amp; Warming Up (10 Menit)</span>
-        <h2>1. Meruntuhkan Stigma: Dari "Penyandang Cacat" Menuju "Anak Berkebutuhan Khusus"</h2>
-        <p style="margin-top: 0.75rem;">
-          Di lingkungan sekolah dan masyarakat umum, peserta didik yang mengalami hambatan sensori, kelainan fisik, maupun keunikan daya tangkap kerap dipandang secara peyoratif sebagai "anak abnormal" atau "penyandang cacat"[cite: 1]. Asumsi ini menempatkan anak semata-mata sebagai sosok yang tak berdaya dan menjadi beban lingkungan[cite: 1]. Transformasi pedagogis dan bimbingan konseling menegaskan bahwa ketunaan bukanlah ketiadaan kemampuan, melainkan adanya kebutuhan belajar dan adaptasi spesifik yang harus difasilitasi secara terencana[cite: 1].
-        </p>
-
-        <div class="quote-box">
-          “Perkembangan manusia merupakan rangkaian perubahan yang bersifat progresif, dinamis, dan berkelanjutan[cite: 1]. Kegagalan atau hambatan di satu fase perkembangan akan membawa dampak berantai bagi fase berikutnya apabila tidak segera mendapatkan penanganan dan intervensi bimbingan yang tepat[cite: 1].”
-          <footer style="margin-top: 0.5rem; font-weight: 700; color: var(--gz-blue);">— Rahmi Dwi Febriani et al. (2024, Bab I: Konsep Dasar BK ABK)[cite: 1]</footer>
-        </div>
-
-        <div class="grid-two-col">
-          <div class="accent-card card-purple-bright">
-            <h3 style="font-size: 1.15rem; margin-bottom: 0.4rem; color: var(--gz-purple);">Dinamika Perkembangan Holistik</h3>
-            <p style="font-size: 0.98rem; color: #475569; line-height: 1.6; margin: 0;">
-              Anak bukan orang dewasa mini[cite: 1]. Pertumbuhan fisik, motorik, kognisi, dan sosioemosional berlangsung beriringan[cite: 1]. Terhambatnya salah satu organ sensorik menuntut optimalisasi kompensasi pada indra lain yang masih berfungsi secara prima[cite: 1].
-            </p>
-          </div>
-          <div class="accent-card card-orange-bright">
-            <h3 style="font-size: 1.15rem; margin-bottom: 0.4rem; color: var(--gz-orange);">Signifikansi Intervensi Dini</h3>
-            <p style="font-size: 0.98rem; color: #475569; line-height: 1.6; margin: 0;">
-              Semakin dini hambatan pertumbuhan teridentifikasi oleh konselor sekolah dan pendidik, semakin cepat program stimulasi individual disusun untuk mencegah timbulnya hambatan perkembangan sekunder[cite: 1].
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <!-- SESI 2: MATERI INTI (45 MENIT) -->
-      <article class="content-card">
-        <span class="section-label pill badge-blue">Fase 2: Telaah Konseptual Mendalam (45 Menit)</span>
-        <h2>2. Hakikat Perkembangan dan Konstruksi Definisi ABK</h2>
-        <p style="margin-top: 0.75rem;">
-          Mengacu langsung pada <strong>Febriani et al. (2024, Bab I)</strong>, Anak Berkebutuhan Khusus (ABK) didefinisikan sebagai anak yang dalam proses tumbuh kembangnya mengalami deviasi, kelainan, atau penyimpangan signifikan dari rata-rata normal—baik secara fisik, intelektual, sosial, maupun emosional—sehingga untuk mencapai potensi optimalnya dibutuhkan pelayanan pendidikan dan bimbingan konseling yang dirancang secara khusus[cite: 1]:
-        </p>
-
-        <!-- DIAGRAM 1: PERGESERAN PARADIGMA (SVG CERAH) -->
-        <div class="diagram-container" style="margin: 2rem 0;">
-          <svg viewBox="0 0 940 310" width="100%" height="auto" style="max-height: 330px; font-family: 'Plus Jakarta Sans', sans-serif;">
-            <defs>
-              <linearGradient id="medGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ef4444"/><stop offset="100%" stop-color="#f87171"/></linearGradient>
-              <linearGradient id="humGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a855f7"/></linearGradient>
-            </defs>
-
-            <!-- Panel Kiri: Paradigma Lama -->
-            <rect x="25" y="25" width="430" height="260" rx="12" fill="#fef2f2" stroke="#fecaca" stroke-width="2"/>
-            <rect x="25" y="25" width="430" height="42" rx="12" fill="url(#medGrad)"/>
-            <text x="240" y="52" fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle">PARADIGMA LAMA (SPECIAL EDUCATION)</text>
-            
-            <text x="45" y="95" fill="#0f172a" font-size="11.5" font-weight="700">• Pendekatan Defisit Medis (Medical Model):</text>
-            <text x="60" y="115" fill="#475569" font-size="10.5">Memandang ketunaan semata-mata sebagai patologi tubuh atau kelainan biologis.</text>
-
-            <text x="45" y="145" fill="#0f172a" font-size="11.5" font-weight="700">• Pelabelan Segregatif (Labeling):</text>
-            <text x="60" y="165" fill="#475569" font-size="10.5">Menggunakan cap "cacat/abnormal" yang berujung pada pengasingan dari ruang publik.</text>
-
-            <text x="45" y="195" fill="#0f172a" font-size="11.5" font-weight="700">• Target Kurikulum Seragam:</text>
-            <text x="60" y="215" fill="#475569" font-size="10.5">Memaksa anak menyesuaikan diri dengan sistem yang kaku tanpa akomodasi ramah anak.</text>
-
-            <text x="45" y="245" fill="#0f172a" font-size="11.5" font-weight="700">• Orientasi Kuratif:</text>
-            <text x="60" y="265" fill="#475569" font-size="10.5">Berfokus mengobati kekurangan, mengabaikan eksplorasi keunggulan potensi anak.</text>
-
-            <!-- Panel Kanan: Paradigma Baru -->
-            <rect x="485" y="25" width="430" height="260" rx="12" fill="#faf5ff" stroke="#ddd6fe" stroke-width="2"/>
-            <rect x="485" y="25" width="430" height="42" rx="12" fill="url(#humGrad)"/>
-            <text x="700" y="52" fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle">PARADIGMA BARU (SPECIAL NEEDS EDUCATION)</text>
-
-            <text x="505" y="95" fill="#0f172a" font-size="11.5" font-weight="700">• Pendekatan Kebutuhan Humanis (Needs Model):</text>
-            <text x="520" y="115" fill="#475569" font-size="10.5">Menitikberatkan pada kebutuhan individual dan penghapusan hambatan interaksi.</text>
-
-            <text x="505" y="145" fill="#0f172a" font-size="11.5" font-weight="700">• Penghormatan Keragaman (Diversity):</text>
-            <text x="520" y="165" fill="#475569" font-size="10.5">Memandang perbedaan individual sebagai spektrum keunikan manusia yang bermartabat.</text>
-
-            <text x="505" y="195" fill="#0f172a" font-size="11.5" font-weight="700">• Pembelajaran Adaptif Terindividualisasi:</text>
-            <text x="520" y="215" fill="#475569" font-size="10.5">Sistem sekolah yang beradaptasi terhadap kapasitas unik setiap peserta didik.</text>
-
-            <text x="505" y="245" fill="#0f172a" font-size="11.5" font-weight="700">• Optimalisasi Sisa Kemampuan:</text>
-            <text x="520" y="265" fill="#475569" font-size="10.5">Memaksimalkan sisa potensi fungsional menuju kemandirian aktivitas harian (ADL).</text>
-          </svg>
-          <div class="diagram-caption" style="text-align: center; font-size: 0.92rem; color: #64748b; margin-top: 0.5rem;">Diagram 1: Transformasi Paradigma Pendidikan Khusus (Febriani et al., 2024)[cite: 1]</div>
-        </div>
-
-        <h3 style="margin-top: 2rem; margin-bottom: 0.75rem; color: var(--gz-purple);">2.1. Domain dan Spektrum Kebutuhan Khusus</h3>
-        <p>Buku ajar memetakan spektrum deviasi perkembangan anak ke dalam 3 rumpun besar[cite: 1]:</p>
-        <ul style="padding-left: 1.75rem; margin-top: 0.5rem; color: #334155; line-height: 1.8;">
-          <li><strong>Domain Sensomotorik &amp; Fisik:</strong> Hambatan penglihatan (tunanetra/low vision), pendengaran (tunarungu), wicara, serta kelainan ortopedi dan saraf gerak tubuh (tunadaksa)[cite: 1].</li>
-          <li><strong>Domain Kognitif &amp; Akademik:</strong> Rentang yang membentang dari kapasitas intelektual di bawah rata-rata (tunagrahita dan lamban belajar/slow learner) hingga potensi superior di atas rata-rata (anak berbakat istimewa/gifted)[cite: 1].</li>
-          <li><strong>Domain Perilaku &amp; Sosioemosional:</strong> Gangguan regulasi emosi dan tingkah laku (tunalaras), gangguan konsentrasi dan hiperaktivitas (ADHD), serta spektrum autisme dengan kekhasan komunikasi timbal balik[cite: 1].</li>
-        </ul>
-      </article>
-
-      <!-- SESI 3: GAMES INTERAKTIF (5 MENIT) -->
-      <article class="content-card">
-        <span class="section-label pill badge-purple">Fase 3: Game Interaktif Berbasis Suara (5 Menit)</span>
-        <h2>Uji Kasus Pedagogis: "Audit Paradigma Calon Pendidik"</h2>
-        <p style="margin-top: 0.5rem; color: #475569;">Cermati dilema ruang kelas di bawah ini, aktifkan suara panduan, dan tentukan sikap profesional konselor:</p>
-
-        <div class="game-card" style="border: 2px dashed #c4b5fd; background: #faf5ff; padding: 1.75rem; border-radius: var(--radius-md); margin-top: 1rem;">
-          <div class="sound-toggle-bar" style="margin-bottom: 1.25rem;">
-            <button id="sound-btn" class="sound-btn active" style="background: #ffffff; border: 1.5px solid var(--gz-purple); color: var(--gz-purple); padding: 7px 16px; border-radius: var(--radius-sm); cursor: pointer; font-weight: 700;" onclick="toggleAudioFx()">🔊 Suara Pengarah: Aktif</button>
-          </div>
-
-          <div style="background: #ffffff; border: 1.5px solid #ddd6fe; border-radius: var(--radius-sm); padding: 1.5rem; margin-bottom: 1.5rem;">
-            <p style="font-weight: 800; color: var(--gz-purple); margin: 0 0 0.5rem 0;">DILEMA DI SEKOLAH REGULER:</p>
-            <p style="font-size: 1rem; color: #1e293b; line-height: 1.65; margin: 0;">
-              "Seorang guru kelas menolak kehadiran Doni (9 tahun, tunadaksa dengan kelumpuhan tangan dan artikulasi bicara lambat)[cite: 1]. Guru berargumen: 'Karena tangannya lumpuh dan bicaranya cadel, pasti kemampuan berpikirnya juga terbelakang, sehingga Doni tidak mungkin bisa mengikuti pelajaran membaca dan hitung.' Guru tersebut bersikeras mengeluarkan Doni dari sekolah."
-            </p>
-          </div>
-
-          <p style="font-size: 1rem; margin-bottom: 1rem; font-weight: 700; color: #4c1d95;">Berdasarkan pemahaman Bab I buku BK ABK (Febriani et al., 2024), bagaimana evaluasi Anda terhadap sikap guru tersebut[cite: 1]?</p>
-
-          <button class="quiz-option" onclick="evaluateParadigmGame('a')">
-            A. Sikap guru sudah tepat karena kelainan fisik pada anak otomatis menunjukkan kerusakan fungsi kognitif secara menyeluruh.
-          </button>
-          <button class="quiz-option" onclick="evaluateParadigmGame('b')">
-            B. Sikap guru SALAH BESAR dan terbelenggu pola pikir defisit medis kuno[cite: 1]. Disfungsi fisik motorik tidak otomatis berkorelasi dengan gangguan kapasitas intelektual[cite: 1]. Doni berhak memperoleh asesmen komprehensif dan akomodasi belajar, bukan pengusiran segregatif[cite: 1].
-          </button>
-          <button class="quiz-option" onclick="evaluateParadigmGame('c')">
-            C. Guru berhak menolak Doni demi menjaga peringkat akademik sekolah agar tidak tersaingi sekolah lain.
-          </button>
-
-          <div id="paradigm-feedback" class="quiz-feedback"></div>
-        </div>
-      </article>
-
-      <!-- SESI 4: TANYA JAWAB & CLOSING (PENUTUP BACAAN) -->
-      <article class="content-card">
-        <span class="section-label pill badge-orange">Fase 4: Tanya Jawab &amp; Pernyataan Penutup</span>
-        <h2>Refleksi Akhir: Memuliakan Martabat dalam Keberagaman</h2>
-        <p style="margin-top: 0.75rem;">
-          Mempelajari konsep dasar anak berkebutuhan khusus bukan sebatas menghafalkan nama kelainan, melainkan membangun kepekaan hati dan cara pandang humanis[cite: 1]. Setiap anak memiliki hak mutlak untuk bertumbuh dan mengembangkan kapasitas dirinya tanpa dibatasi oleh stigma fisik maupun mental[cite: 1].
-        </p>
-        <div class="quote-box" style="border-left-color: var(--gz-orange); background: #fff7ed;">
-          “Tugas bimbingan dan konseling adalah membuka isolasi psikologis, menemukan kilau potensi di tengah keterbatasan, dan mendampingi anak berkebutuhan khusus menuju kemandirian hidup yang sejati[cite: 1].”
-          <footer style="margin-top: 0.5rem; font-weight: 700; color: #c2410c;">— Rahmi Dwi Febriani, Triyono, Puji Gusri Handayani, &amp; Hafiz Hidayat (2024)[cite: 1]</footer>
-        </div>
-      </article>
-
-    </section>
-
-
-    <!-- =========================================================================
-         BAGIAN 2: WORKSHEET MAHASISWA (TERPISAH PADA TOMBOL TAB SENDIRI)
-         ========================================================================= -->
-    <section id="worksheet-view" class="view-section">
-      <div class="print-action-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; background: #ffffff; padding: 1.5rem; border-radius: var(--radius-md); border: 1.5px solid #e2e8f0;">
-        <div>
-          <h3 style="color: var(--gz-purple); margin: 0 0 0.3rem 0; font-size: 1.25rem;">Lembar Aktivitas Mahasiswa: Analisis Paradigma &amp; Kasus ABK (LKM 01)</h3>
-          <p style="font-size: 0.95rem; color: #64748b; margin: 0;">Selesaikan telaah kritis dua studi kasus di bawah ini. Kolom lembar jawaban telah didesain ekstra luas untuk memfasilitasi argumentasi ilmiah mendalam, lalu cetak dalam format PDF.</p>
-        </div>
-        <button class="btn-ctrl" style="background: var(--gz-purple); color: #ffffff;" onclick="window.print()">
-          <span>🖨️ Cetak / Unduh Dokumen (PDF)</span>
-        </button>
+      <!-- KOP RESMI -->
+      <div class="header-doc">
+        <h1>Rencana Pembelajaran Semester (RPS)</h1>
+        <h2>Mata Kuliah: Penulisan Karya Ilmiah</h2>
+        <p>Berdasarkan Kurikulum Berbasis Capaian Pembelajaran (OBE) • Beban Studi: 2 SKS (16 Pertemuan)</p>
       </div>
 
-      <div class="worksheet-paper" style="background: #ffffff; padding: 2.75rem; border-radius: var(--radius-lg); border: 2px solid #e2e8f0;">
-        <header style="border-bottom: 2.5px solid #0f172a; padding-bottom: 1.5rem; margin-bottom: 2rem;">
-          <h2 style="text-align: center; text-transform: uppercase; font-size: 1.35rem; color: #0f172a; margin: 0 0 0.5rem 0;">LEMBAR KERJA ANALISIS HAKIKAT &amp; PARADIGMA ANAK BERKEBUTUHAN KHUSUS (LKM 01)</h2>
-          <p style="text-align: center; font-size: 0.95rem; color: #475569; margin: 0;">Mata Kuliah: Bimbingan dan Konseling ABK (2 SKS) • Rujukan: Febriani et al. (2024, Bab I)[cite: 1]</p>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.75rem; font-size: 0.95rem; background: #f8fafc; padding: 1.25rem; border-radius: var(--radius-sm);">
-            <div><strong>Nama Mahasiswa / Calon Konselor:</strong> ____________________________________</div>
-            <div><strong>NIM / Rombel:</strong> ____________________________________</div>
-            <div><strong>Tanggal Perkuliahan:</strong> ____________________________________</div>
-            <div><strong>Tanda Tangan Dosen Pengampu:</strong> ____________________________________</div>
-          </div>
-        </header>
+      <!-- I. IDENTITAS MATA KULIAH -->
+      <table class="table-section">
+        <tr>
+          <th>Mata Kuliah</th>
+          <td><strong>Penulisan Karya Ilmiah</strong></td>
+          <th>Semester / Bobot</th>
+          <td>Gasal / Genap • 2 SKS (2 x 50 Menit/Minggu)</td>
+        </tr>
+        <tr>
+          <th>Kode Mata Kuliah</th>
+          <td>KTI-2026</td>
+          <th>Rumpun Mata Kuliah</th>
+          <td>Mata Kuliah Keahlian Berkarya / Akademik Inti</td>
+        </tr>
+        <tr>
+          <th>Dosen Pengampu</th>
+          <td>Tim Dosen Pengampu Penulisan Karya Ilmiah</td>
+          <th>Buku Rujukan Utama</th>
+          <td><em>Teknik Penulisan Karya Ilmiah (Jurus Mahir Penulisan Karya Ilmiah)</em> karya Mohammad Ali Mahmudi dkk. (Cetakan Pertama, 2023).</td>
+        </tr>
+      </table>
 
-        <!-- KASUS 1: ANALISIS PARADIGMA INKLUSI -->
-        <div class="content-card" style="border: 2px solid #e2e8f0; background: #ffffff; padding: 2rem; margin-bottom: 2rem;">
-          <label style="color: var(--gz-purple); font-size: 1.15rem; display: block; margin-bottom: 0.6rem; font-weight: 800;">
-            KASUS ANALISIS 1: BEDAH KRITIS MEDICAL MODEL VS NEEDS MODEL DALAM PENERIMAAN SEKOLAH (BOBOT 50%)
-          </label>
-          <p style="font-size: 1rem; color: #1e293b; line-height: 1.7; margin-bottom: 1.25rem;">
-            <strong>Profil Kasus:</strong> Di awal tahun ajaran baru, seorang anak bernama Rizky (7 tahun) yang memiliki hambatan pendengaran (tunarungu taraf sedang dan telah memakai alat bantu dengar) didaftarkan ke sekolah dasar di dekat rumahnya[cite: 1]. Kepala sekolah menolak mentah-mentah berkas Rizky dengan menyatakan: "Sekolah kami hanya menerima anak yang normal dan sehat walafiat. Sekolah kami tidak punya dokter atau guru khusus, jadi anak cacat seperti ini hanya akan menyusahkan guru kelas."
-          </p>
+      <!-- II. CAPAIAN PEMBELAJARAN (CPL & CPMK) -->
+      <table class="table-section">
+        <tr>
+          <th>Capaian Pembelajaran Lulusan (CPL)</th>
+          <td>
+            <ul style="padding-left: 1.2rem;">
+              <li><strong>CPL-1 (Sikap & Etika):</strong> Menjunjung tinggi integritas akademik, kejujuran intelektual, mematuhi etika kepengarangan, serta menolak segala bentuk kecurangan akademik (fabrikasi, falsifikasi, dan plagiarisme).</li>
+              <li><strong>CPL-2 (Pengetahuan):</strong> Menguasai konsep teoretis rancangan riset, sistematika baku naskah ilmiah IMRAD, tipografi dan mekanika pengetikan, metodologi kualitatif/kuantitatif, serta aturan publikasi jurnal bereputasi.</li>
+              <li><strong>CPL-3 (Keterampilan Khusus):</strong> Mampu menyusun draf artikel ilmiah mandiri, mengoperasikan peranti manajer referensi (Mendeley/Zotero), menelaah artikel secara kritis (scanning/skimming), dan mempresentasikan karya ilmiah di hadapan forum akademik.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th>Capaian Pembelajaran Mata Kuliah (CPMK)</th>
+          <td>
+            <ul style="padding-left: 1.2rem;">
+              <li><strong>CPMK-1:</strong> Mahasiswa mampu memahami hakikat, unsur penting, dan perencanaan karya ilmiah (Bab 1 & Bab 2).</li>
+              <li><strong>CPMK-2:</strong> Mahasiswa mampu membedakan ragam jenis karya ilmiah serta menerapkan mekanika tata tulis dan pengetikan fisik baku 4-4-3-3 (Bab 3, 4, 5)[cite: 1].</li>
+              <li><strong>CPMK-3:</strong> Mahasiswa mampu menyusun kerangka sistematika baku serta memetakan metodologi dan desain data (Bab 6 & Bab 7)[cite: 1].</li>
+              <li><strong>CPMK-4:</strong> Mahasiswa mampu membedah KTI dalam pertemuan ilmiah serta mempraktikkan teknik presentasi ilmiah yang beretika (Bab 8 & Bab 9)[cite: 1].</li>
+              <li><strong>CPMK-5:</strong> Mahasiswa mampu mendeteksi batas plagiarisme, melakukan parafrasa, serta mengelola referensi menggunakan peranti lunak (Bab 10 & Bab 11)[cite: 1].</li>
+              <li><strong>CPMK-6:</strong> Mahasiswa mampu menerapkan teknik membaca kritis jurnal, membangun motivasi kepenulisan (formula PMR), menegakkan etika penulisan, dan mengeksekusi alur submit artikel pada portal OJS (Bab 12, 13, 14, 15)[cite: 1].</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
 
-          <p style="font-size: 1.05rem; line-height: 1.6; color: #0f172a; font-weight: 700; margin-bottom: 0.5rem;">
-            Instruksi Tugas Analisis Mahasiswa:
-          </p>
-          <p style="font-size: 0.98rem; color: #334155; line-height: 1.7; margin: 0 0 1rem 0;">
-            Berdasarkan konsep dasar bimbingan konseling ABK (<strong>Febriani et al., 2024, Bab I</strong>)[cite: 1]:
-            <br>1. Analisis bagaimana penolakan kepala sekolah mencerminkan kelemahan fatal pola pikir <em>Medical Model / Special Education</em> yang memandang disabilitas sebagai kutukan fisik[cite: 1]!
-            <br>2. Jelaskan bagaimana sudut pandang <em>Special Needs Education</em> membedah kebutuhan belajar Rizky serta nilai manfaat lingkungan inklusi bagi perkembangan psikososialnya[cite: 1]!
-            <br>3. Rumuskan draf konseling advokasi yang dapat Anda berikan kepada kepala sekolah dan para guru untuk membuka wawasan inklusif mereka[cite: 1]!
-          </p>
-          
-          <label style="font-weight: 700; font-size: 0.95rem; color: var(--gz-purple); margin-top: 1rem; display: block;">
-            KOLOM LEMBAR JAWABAN MAHASISWA (KASUS 1):
-          </label>
-          <textarea class="large-answer-area" placeholder="Tuliskan analisis kritis paradigma defisit medis, prinsip model kebutuhan, serta strategi advokasi konseling secara ilmiah di sini..."></textarea>
-        </div>
-
-        <!-- KASUS 2: KETERKAITAN TUGAS PERKEMBANGAN & POLA ASUH -->
-        <div class="content-card" style="border: 2px solid #e2e8f0; background: #ffffff; padding: 2rem;">
-          <label style="color: var(--gz-orange); font-size: 1.15rem; display: block; margin-bottom: 0.6rem; font-weight: 800;">
-            KASUS ANALISIS 2: IMPLIKASI KETERLAMBATAN INTERVENSI DINI DAN OVER-PROTECTIVE PARENTING (BOBOT 50%)
-          </label>
-          <p style="font-size: 1rem; color: #1e293b; line-height: 1.7; margin-bottom: 1.25rem;">
-            <strong>Profil Kasus:</strong> Naila (6 tahun) mengalami hambatan penglihatan berat (<em>low vision</em>)[cite: 1]. Karena orang tua merasa malu dan takut Naila terluka, Naila tidak pernah diizinkan keluar rumah, tidak dilatih mengenakan pakaian sendiri, dan selalu disuapi makan. Ketika dimasukkan ke jenjang prasekolah, Naila menunjukkan rasa takut berlebih terhadap orang asing, menangis histeris ketika mendengar bunyi ramai, serta tidak mampu melakukan koordinasi motorik kasar dasar.
-          </p>
-
-          <p style="font-size: 1.05rem; line-height: 1.6; color: #0f172a; font-weight: 700; margin-bottom: 0.5rem;">
-            Instruksi Tugas Analisis Mahasiswa:
-          </p>
-          <p style="font-size: 0.98rem; color: #334155; line-height: 1.7; margin: 0 0 1rem 0;">
-            Mengacu pada prinsip hukum dinamika perkembangan anak (<strong>Febriani et al., 2024</strong>)[cite: 1]:
-            <br>1. Analisis bagaimana penundaan intervensi dini dan proteksi berlebihan orang tua mengacaukan pemenuhan tugas perkembangan (developmental tasks) pada diri Naila[cite: 1]!
-            <br>2. Identifikasi dampak negatif sekunder (secondary handicap) pada aspek kepribadian dan sosial Naila jika situasi ini dibiarkan terus berlanjut[cite: 1]!
-            <br>3. Susunlah prioritas program layanan bimbingan konseling pribadi dan konseling keluarga bagi orang tua Naila guna membangun kemandirian harian (activity in daily living)[cite: 1]!
-          </p>
-
-          <label style="font-weight: 700; font-size: 0.95rem; color: var(--gz-orange); margin-top: 1rem; display: block;">
-            KOLOM LEMBAR JAWABAN MAHASISWA (KASUS 2):
-          </label>
-          <textarea class="large-answer-area" placeholder="Tuliskan analisis keterpenggalan tugas perkembangan, bahaya hambatan sekunder, dan program layanan bimbingan mandiri di sini..."></textarea>
-        </div>
-
+      <!-- III. MATRIKS PERKULIAHAN 16 MINGGU -->
+      <div class="matrix-title">
+        <span>📅</span> Matriks Pelaksanaan Perkuliahan Mingguan (16 Pertemuan)
       </div>
-    </section>
 
+      <table class="table-matrix">
+        <thead>
+          <tr>
+            <th style="width: 5%;">Mg</th>
+            <th style="width: 18%;">Sub-CPMK (Kemampuan Akhir yang Diharapkan)</th>
+            <th style="width: 25%;">Bahan Kajian (Materi Pokok & Rujukan Bab)</th>
+            <th style="width: 15%;">Bentuk & Metode Pembelajaran</th>
+            <th style="width: 15%;">Pengalaman Belajar / Aktivitas</th>
+            <th style="width: 12%;">Kriteria & Bentuk Penilaian</th>
+            <th style="width: 10%;">Bobot</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Pertemuan 1 -->
+          <tr>
+            <td class="col-center"><strong>1</strong></td>
+            <td>Mahasiswa mampu memahami hakikat, definisi, dan 10 unsur penting karya ilmiah[cite: 1].</td>
+            <td><strong>Bab 1: Hakikat Karya Ilmiah</strong><br>• Definisi & tujuan karya ilmiah[cite: 1]<br>• 10 pilar utama (objektivitas, transparansi, peer review, replikasi, keterbacaan)[cite: 1].</td>
+            <td>Kuliah interaktif, Diskusi kelas, Tanya jawab (2 x 50')</td>
+            <td>Menelaah hakikat keterbukaan dan objektivitas data dalam ilmu pengetahuan[cite: 1].</td>
+            <td>Partisipasi aktif & kuis diagnostik</td>
+            <td class="col-center">3%</td>
+          </tr>
 
-    <!-- =========================================================================
-         BAGIAN 3: INTERACTIVE PRESENTATION MODE (TERPISAH PADA TOMBOL TAB SENDIRI)
-         ========================================================================= -->
-    <section id="presentation-view" class="view-section">
-      
-      <div class="presentation-frame-bright">
-        
-        <!-- SLIDE 1 -->
-        <div class="slide-item active">
-          <span class="slide-indicator" style="color: var(--gz-purple); font-weight: 800; font-size: 0.95rem;">Slide 1 dari 6 • Orientasi Keilmuan</span>
-          <h2>Konsep Dasar BK ABK</h2>
-          <div class="slide-body">
-            <p>Membuka Wawasan Terhadap Hakikat Anak Berkebutuhan Khusus[cite: 1]:</p>
-            <ul>
-              <li>Hakikat perkembangan manusia: proses progresif, sistematis, dan berkesinambungan[cite: 1].</li>
-              <li>Keberhasilan tahap perkembangan awal menjadi fondasi kokoh bagi tahap selanjutnya[cite: 1].</li>
-              <li>Urgensi BK: mengenali potensi dan membebaskan anak dari isolasi psikososial[cite: 1].</li>
+          <!-- Pertemuan 2 -->
+          <tr>
+            <td class="col-center"><strong>2</strong></td>
+            <td>Mahasiswa mampu menyusun tahapan perencanaan karya ilmiah dari pemilihan topik hingga revisi[cite: 1].</td>
+            <td><strong>Bab 2: Perencanaan Karya Ilmiah</strong><br>• Kriteria topik relevan & signifikan[cite: 1]<br>• 7 langkah rencana tujuan KTI[cite: 1]<br>• Pengumpulan data, analisis & revisi[cite: 1].</td>
+            <td>Collaborative learning, Diskusi kelompok (2 x 50')</td>
+            <td>Praktik merumuskan topik tentatif berdasar minat dan bidang ilmu mahasiswa[cite: 1].</td>
+            <td>Tugas rumusan topik & outline awal</td>
+            <td class="col-center">4%</td>
+          </tr>
+
+          <!-- Pertemuan 3 -->
+          <tr>
+            <td class="col-center"><strong>3</strong></td>
+            <td>Mahasiswa mampu mengidentifikasi dan membedakan karakteristik 9 jenis karya tulis ilmiah[cite: 1].</td>
+            <td><strong>Bab 3: Jenis-Jenis Karya Ilmiah</strong><br>• Makalah, artikel ilmiah (IMRAD), laporan penelitian[cite: 1]<br>• Review article, studi kasus, monograf, skripsi[cite: 1].</td>
+            <td>Discovery learning & Presentasi (2 x 50')</td>
+            <td>Membedah struktur naskah jurnal IMRAD vs makalah tugas perkuliahan[cite: 1].</td>
+            <td>Ketepatan analisis jenis KTI</td>
+            <td class="col-center">4%</td>
+          </tr>
+
+          <!-- Pertemuan 4 -->
+          <tr>
+            <td class="col-center"><strong>4</strong></td>
+            <td>Mahasiswa mampu menerapkan teknik pengetikan fisik, margin 4-4-3-3, font, spasi, kutipan, dan catatan kaki Latin[cite: 1].</td>
+            <td><strong>Bab 4: Teknik Penulisan Karya Ilmiah</strong><br>• Kertas A4, font TNR 12/14/9, margin 4-4-3-3[cite: 1]<br>• Spasi, nomor halaman ganjil-genap[cite: 1]<br>• Kutipan langsung panjang & footnote (Ibid., Op. cit., Loc. cit.)[cite: 1].</td>
+            <td>Praktik laboratorium komputer, Simulasi pengetikan (2 x 50')</td>
+            <td>Mengetik naskah sesuai margin 4-4-3-3 dan menyusun catatan kaki singkatan Latin secara presisi[cite: 1].</td>
+            <td>Praktik format fisik & penulisan footnote</td>
+            <td class="col-center">5%</td>
+          </tr>
+
+          <!-- Pertemuan 5 -->
+          <tr>
+            <td class="col-center"><strong>5</strong></td>
+            <td>Mahasiswa mampu menguasai 10 ciri bahasa tulis ilmiah, konstruksi Bab I–III, dan menyusun abstrak mandiri[cite: 1].</td>
+            <td><strong>Bab 5: Bahasa dan Tata Tulis</strong><br>• Ragam bahasa baku vs kolokial[cite: 1]<br>• Konstruksi Bab 1, Bab 2, dan Bab 3[cite: 1]<br>• Kaidah abstrak mandiri (150–250 kata, IMRAD)[cite: 1].</td>
+            <td>Project based learning, Latihan mandiri (2 x 50')</td>
+            <td>Mengonversi kalimat kolokial menjadi kalimat tulis ilmiah dan merancang draf abstrak terstruktur[cite: 1].</td>
+            <td>Rubrik rekonstruksi bahasa & draf abstrak</td>
+            <td class="col-center">5%</td>
+          </tr>
+
+          <!-- Pertemuan 6 -->
+          <tr>
+            <td class="col-center"><strong>6</strong></td>
+            <td>Mahasiswa mampu menyusun 9 komponen sistematika KTI, mengevaluasi kelayakan masalah (FINER), dan membedakan gaya sitasi[cite: 1].</td>
+            <td><strong>Bab 6: Sistematika Karya Ilmiah</strong><br>• Anatomi 9 elemen karya ilmiah baku[cite: 1]<br>• Syarat masalah riset (Feasible, Interesting, Novelty, Ethical, Relevant)[cite: 1]<br>• Ragam gaya selingkung (APA, ASA, Harvard, Vancouver, Chicago)[cite: 1].</td>
+            <td>Problem based learning, Diskusi kelas (2 x 50')</td>
+            <td>Menguji kelayakan masalah penelitian mahasiswa menggunakan instrumen FINER[cite: 1].</td>
+            <td>Ketepatan matriks kelayakan masalah</td>
+            <td class="col-center">5%</td>
+          </tr>
+
+          <!-- Pertemuan 7 -->
+          <tr>
+            <td class="col-center"><strong>7</strong></td>
+            <td>Mahasiswa mampu menganalisis paradigma metodologi (kualitatif vs kuantitatif), klasifikasi data, serta kriteria inklusi/eksklusi sampel[cite: 1].</td>
+            <td><strong>Bab 7: Isi Karya Ilmiah</strong><br>• Batang tubuh Bab I–III[cite: 1]<br>• Paradigma induktif vs deduktif[cite: 1]<br>• Data diskrit vs kontinum, primer vs sekunder[cite: 1]<br>• Kriteria inklusi & eksklusi sampel[cite: 1].</td>
+            <td>Ceramah interaktif, Bedah matriks riset (2 x 50')</td>
+            <td>Mengelompokkan jenis data laboratorium/lapangan serta menetapkan batasan sampel penelitian[cite: 1].</td>
+            <td>Evaluasi 15 Pilihan Ganda (Kunci Dosen: DOSENKTI7)[cite: 1]</td>
+            <td class="col-center">6%</td>
+          </tr>
+
+          <!-- Pertemuan 8: UTS -->
+          <tr class="eval-row">
+            <td class="col-center"><strong>8</strong></td>
+            <td><strong>UJIAN TENGAH SEMESTER (UTS):</strong> Mahasiswa mampu menyusun draf naskah artikel ilmiah mandiri yang mengintegrasikan format fisik, IMRAD, kutipan, dan footnote[cite: 1].</td>
+            <td><strong>Materi Terpadu Bab 1 s.d. Bab 7</strong><br>• Penugasan mandiri: Draf naskah artikel ilmiah lengkap (Judul, Abstrak, Pendahuluan, Metode, Hasil, Pembahasan, Pustaka)[cite: 1]<br>• Format fisik kertas A4, margin 4-4-3-3, font TNR[cite: 1].</td>
+            <td>Tugas Proyek Mandiri Terstruktur (Waktu Pengumpulan: 1 Minggu)</td>
+            <td>Menulis naskah artikel ilmiah utuh sesuai bidang studi mahasiswa dengan mematuhi kaidah baku[cite: 1].</td>
+            <td><strong>Rubrik Portofolio Naskah UTS:</strong><br>Format fisik (20%), IMRAD (30%), Kutipan/Footnote (25%), Pustaka & Etika (25%)[cite: 1]</td>
+            <td class="col-center"><strong>15%</strong></td>
+          </tr>
+
+          <!-- Pertemuan 9 -->
+          <tr>
+            <td class="col-center"><strong>9</strong></td>
+            <td>Mahasiswa mampu memahami fungsi KTI dalam 6 forum ilmiah dan mengklasifikasikan jenjang karya akademik[cite: 1].</td>
+            <td><strong>Bab 8: KTI dalam Pertemuan Ilmiah</strong><br>• 6 Kategori forum: simposium, seminar, lokakarya, diskusi, rapat, konferensi[cite: 1]<br>• 3 Kriteria gagasan ilmiah Firmansyah[cite: 1]<br>• Jenjang: makalah, kertas kerja, paper, skripsi, tesis, disertasi[cite: 1].</td>
+            <td>Simulasi forum, Diskusi interaktif (2 x 50')</td>
+            <td>Menganalisis perbedaan orientasi luaran antara lokakarya (*workshop*) dan seminar ilmiah[cite: 1].</td>
+            <td>Evaluasi 15 Pilihan Ganda (Kunci Dosen: DOSENKTI9)[cite: 1]</td>
+            <td class="col-center">5%</td>
+          </tr>
+
+          <!-- Pertemuan 10 -->
+          <tr>
+            <td class="col-center"><strong>10</strong></td>
+            <td>Mahasiswa mampu menguasai teknik presentasi lisan, desain slide visual yang efektif, kontrol vokal, dan etika tanya jawab[cite: 1].</td>
+            <td><strong>Bab 9: Teknik Presentasi Karya Ilmiah</strong><br>• Keterampilan berbicara & literasi[cite: 1]<br>• Desain slide PowerPoint/Prezi & visualisasi data[cite: 1]<br>• Bahasa tubuh, kontrol vokal, manajemen stres[cite: 1]<br>• Strategi membuka, menutup, dan merespons pertanyaan[cite: 1].</td>
+            <td>Simulasi presentasi podium, Role-playing (2 x 50')</td>
+            <td>Mempraktikkan pembukaan presentasi menarik dan simulasi merespons pertanyaan sulit penguji secara etis[cite: 1].</td>
+            <td>Evaluasi 15 Pilihan Ganda (Kunci Dosen: DOSENKTI10)[cite: 1]</td>
+            <td class="col-center">5%</td>
+          </tr>
+
+          <!-- Pertemuan 11 -->
+          <tr>
+            <td class="col-center"><strong>11</strong></td>
+            <td>Mahasiswa mampu mengidentifikasi batasan hukum plagiarisme, membaca laporan Turnitin, dan menerapkan formula Akui-Parafrasa-Integrasi[cite: 1].</td>
+            <td><strong>Bab 10: Plagiarisme</strong><br>• Payung hukum UU Sisdiknas & Permendiknas 17/2010[cite: 1]<br>• Ragam plagiasi (verbatim, tambal-sulam, self-plagiarism)[cite: 1]<br>• Interpretasi varian warna Turnitin (batas 20–25%)[cite: 1]<br>• 3 Tips mitigasi: Akui, Parafrasa, Integrasi[cite: 1].</td>
+            <td>Case-based learning, Analisis kasus hukum (2 x 50')</td>
+            <td>Membedah kasus sengketa parafrasa tanpa atribusi dan merekonstruksi teks bernilai kemiripan tinggi Turnitin[cite: 1].</td>
+            <td>Analisis Studi Kasus Mahasiswa (Panduan Dosen: DOSENKTI11)[cite: 1]</td>
+            <td class="col-center">6%</td>
+          </tr>
+
+          <!-- Pertemuan 12 -->
+          <tr>
+            <td class="col-center"><strong>12</strong></td>
+            <td>Mahasiswa mampu menguasai manajemen pustaka, teknik sitasi manual aneka sumber, serta mengoperasikan peranti lunak Mendeley/Zotero[cite: 1].</td>
+            <td><strong>Bab 11: Mengelola Referensi</strong><br>• Fungsi manajemen referensi terorganisasi[cite: 1]<br>• Penulisan rujukan manual (buku, jurnal, prosiding, dokumen pemerintah, internet, film)[cite: 1]<br>• Fitur perangkat lunak: Zotero, Mendeley Cite, EndNote[cite: 1].</td>
+            <td>Hands-on software practice, Laboratorium komputer (2 x 50')</td>
+            <td>Mengoreksi kekeliruan bibliografi manual dan memverifikasi kelengkapan metadata file PDF pada Mendeley[cite: 1].</td>
+            <td>Analisis Studi Kasus Mahasiswa (Panduan Dosen: DOSENKTI12)[cite: 1]</td>
+            <td class="col-center">6%</td>
+          </tr>
+
+          <!-- Pertemuan 13 -->
+          <tr>
+            <td class="col-center"><strong>13</strong></td>
+            <td>Mahasiswa mampu menerapkan teknik scanning, skimming, dan investigasi kritis 7 elemen struktur IMRAD artikel jurnal[cite: 1].</td>
+            <td><strong>Bab 12: Teknik Membaca Artikel Ilmiah di Jurnal Ilmiah</strong><br>• Keterampilan bahasa input-output & proses mental (200–400 wpm)[cite: 1]<br>• Scanning (pemindaian spesifik) vs Skimming (menjelajah cepat)[cite: 1]<br>• 7 Langkah telaah kritis bagian artikel (Wekke)[cite: 1].</td>
+            <td>Critical reading workshop, Diskusi kelompok (2 x 50')</td>
+            <td>Membedah potensi bias grafik skala terpotong pada bagian hasil dan merancang SOP penelusuran artikel jurnal[cite: 1].</td>
+            <td>Analisis 3 Kasus Membaca Kritis Jurnal (Tanpa Kunci)</td>
+            <td class="col-center">6%</td>
+          </tr>
+
+          <!-- Pertemuan 14 -->
+          <tr>
+            <td class="col-center"><strong>14</strong></td>
+            <td>Mahasiswa mampu membangun motivasi kepenulisan intrinsik, memahami 21 alasan publikasi, dan merumuskan judul formula PMR[cite: 1].</td>
+            <td><strong>Bab 13: Motivasi dalam Menulis Artikel Ilmiah</strong><br>• Mitos "mood" vs komitmen kebenaran[cite: 1]<br>• Dimensi motivasi Frandsen (intrinsik & ekstrinsik)[cite: 1]<br>• 21 Alasan publikasi ilmiah di era big data[cite: 1]<br>• Formula judul PMR (Problem, Method, Result)[cite: 1].</td>
+            <td>Problem-based learning, Brainstorming ide (2 x 50')</td>
+            <td>Mengevaluasi hambatan *writer's block* dan merekonstruksi judul artikel ilmiah lemah menjadi format PMR[cite: 1].</td>
+            <td>Analisis 3 Kasus Motivasi & Judul PMR (Tanpa Kunci)</td>
+            <td class="col-center">5%</td>
+          </tr>
+
+          <!-- Pertemuan 15 -->
+          <tr>
+            <td class="col-center"><strong>15</strong></td>
+            <td>Mahasiswa mampu memahami standar etika penulisan, 6 pelanggaran ilmiah, 9 ciri KTI, kriteria mutu jurnal (SINTA/Scopus), dan alur submit OJS[cite: 1].</td>
+            <td><strong>Bab 14 & Bab 15: Etika Penulisan & Submit Jurnal Ilmiah</strong><br>• Etika KTI (kejujuran, keabsahan, hak cipta)[cite: 1]<br>• Fabrikasi, falsifikasi, kepengarangan tidak sah, konflik kepentingan[cite: 1]<br>• 9 Ciri khas KTI (reproduktif, tidak ambigu, denotatif)[cite: 1]<br>• Kriteria mutu jurnal, SINTA 1–6, Scopus, Think.Check.Submit[cite: 1]<br>• Alur pengiriman naskah Open Journal System (OJS)[cite: 1].</td>
+            <td>Simulasi platform OJS, Diskusi kelas (2 x 50')</td>
+            <td>Menganalisis perbedaan fabrikasi vs falsifikasi data dan simulasi penyiapan metadata submit artikel pada sistem OJS[cite: 1].</td>
+            <td>Evaluasi 20 Pilihan Ganda (Kunci Dosen: DOSENKTI15)[cite: 1]</td>
+            <td class="col-center">8%</td>
+          </tr>
+
+          <!-- Pertemuan 16: UAS -->
+          <tr class="eval-row">
+            <td class="col-center"><strong>16</strong></td>
+            <td><strong>UJIAN AKHIR SEMESTER (UAS):</strong> Mahasiswa mampu menghasilkan manuskrip artikel ilmiah siap submit (ready-to-submit) yang lolos uji Turnitin dan dilengkapi simulasi metadata OJS[cite: 1].</td>
+            <td><strong>Evaluasi Komprehensif Siklus Publikasi (Bab 1–15)</strong><br>• Manuskrip artikel ilmiah utuh format IMRAD (bebas fabrikasi/falsifikasi)[cite: 1]<br>• Judul PMR, abstrak mandiri, minimal 15 referensi Mendeley/Zotero[cite: 1]<br>• Laporan Turnitin &lt; 25% dan lembar rencana submit jurnal OJS[cite: 1].</td>
+            <td>Tugas Proyek Akhir Mandiri (Final Capstone Project)</td>
+            <td>Finalisasi naskah manuskrip artikel ilmiah lengkap dan verifikasi kelayakan jurnal target secara mandiri[cite: 1].</td>
+            <td><strong>Rubrik Penilaian Manuskrip UAS:</strong><br>Judul PMR & Fisik (15%), Abstrak & Intro (20%), Metode & Hasil (25%), Pembahasan & Simpulan (20%), Sitasi Mendeley & Etika OJS (20%)[cite: 1]</td>
+            <td class="col-center"><strong>20%</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- IV. SISTEM PENILAIAN DAN BOBOT EVALUASI -->
+      <table class="table-section">
+        <tr>
+          <th>Komponen Penilaian</th>
+          <td>
+            <ul style="padding-left: 1.2rem;">
+              <li><strong>Aktivitas Partisipatif & Diskusi Kelas:</strong> 10%</li>
+              <li><strong>Tugas Terstruktur & Analisis Studi Kasus (LKT):</strong> 20%</li>
+              <li><strong>Kuis Evaluasi Berkala (Pertemuan 7, 9, 10, 15):</strong> 15%[cite: 1]</li>
+              <li><strong>Ujian Tengah Semester / UTS (Proyek Draf Naskah Bab 1–7):</strong> 25%[cite: 1]</li>
+              <li><strong>Ujian Akhir Semester / UAS (Manuskrip Siap Submit OJS & Turnitin):</strong> 30%[cite: 1]</li>
             </ul>
-          </div>
-          <div class="speaker-notes-bright">
-            <strong>Catatan Dosen (Apersepsi 10 Menit):</strong> Buka pertemuan dengan pertanyaan pemantik: "Apakah anak yang duduk di kursi roda otomatis memiliki otak yang tidak mampu berpikir[cite: 1]?" Tunjukkan fakta bahwa fisik dan intelegensi adalah dua domain yang berbeda[cite: 1].
-          </div>
-        </div>
+          </td>
+        </tr>
+        <tr>
+          <th>Standar Konversi Nilai</th>
+          <td>
+            <strong>A</strong> (85.00 – 100) • <strong>A-</strong> (80.00 – 84.99) • <strong>B+</strong> (75.00 – 79.99) • <strong>B</strong> (70.00 – 74.99) • <strong>B-</strong> (65.00 – 69.99) • <strong>C+</strong> (60.00 – 64.99) • <strong>C</strong> (55.00 – 59.99) • <strong>D</strong> (45.00 – 54.99) • <strong>E</strong> (&lt; 45.00)
+          </td>
+        </tr>
+      </table>
 
-        <!-- SLIDE 2 -->
-        <div class="slide-item">
-          <span class="slide-indicator" style="color: var(--gz-blue); font-weight: 800; font-size: 0.95rem;">Slide 2 dari 6 • Hukum Perkembangan</span>
-          <h2>Dinamika Pertumbuhan &amp; Perkembangan</h2>
-          <div class="slide-body">
-            <p>Kaidah Pokok Perkembangan Individu (Febriani et al., 2024)[cite: 1]:</p>
-            <ul>
-              <li><strong>Hukum Kontinuitas:</strong> Perkembangan fisik, sensori, kognisi, dan sosioemosional saling memengaruhi secara integral[cite: 1].</li>
-              <li><strong>Titik Kritis Perkembangan:</strong> Keterlambatan penanganan pada organ sensori primer dapat memicu kemunduran mental sekunder[cite: 1].</li>
-              <li><strong>Intervensi Dini:</strong> Mengoptimalkan plastisitas otak anak guna melatih kompensasi sensorik lainnya[cite: 1].</li>
-            </ul>
-          </div>
-          <div class="speaker-notes-bright">
-            <strong>Catatan Dosen:</strong> Jelaskan contoh anak tunanetra yang bila sejak balita tidak dikenalkan dengan orientasi mobilitas, akan mengalami ketakutan sensorik saat menginjak bangku sekolah[cite: 1].
-          </div>
-        </div>
-
-        <!-- SLIDE 3 -->
-        <div class="slide-item">
-          <span class="slide-indicator" style="color: var(--gz-orange); font-weight: 800; font-size: 0.95rem;">Slide 3 dari 6 • Batasan Terminologi</span>
-          <h2>Definisi Anak Berkebutuhan Khusus</h2>
-          <div class="slide-body">
-            <p>Konsep Batasan ABK Menurut Para Ahli[cite: 1]:</p>
-            <ul>
-              <li>Anak yang mengalami deviasi atau kelainan bermakna dari rata-rata normal seusianya[cite: 1].</li>
-              <li>Penyimpangan terjadi pada dimensi fisik, intelektual, perilaku emosional, atau komunikasi[cite: 1].</li>
-              <li>Menuntut adanya modifikasi metode, materi instruksional, serta bimbingan terpersonalisasi[cite: 1].</li>
-            </ul>
-          </div>
-          <div class="speaker-notes-bright">
-            <strong>Catatan Dosen:</strong> Ingatkan mahasiswa bahwa ABK tidak hanya mencakup anak dengan hambatan (di bawah rata-rata), tetapi juga mencakup anak dengan kemampuan superior di atas rata-rata (anak berbakat istimewa/gifted)[cite: 1].
-          </div>
-        </div>
-
-        <!-- SLIDE 4 -->
-        <div class="slide-item">
-          <span class="slide-indicator" style="color: var(--gz-purple); font-weight: 800; font-size: 0.95rem;">Slide 4 dari 6 • Pergeseran Paradigma</span>
-          <h2>Special Education vs Special Needs Education</h2>
-          <div class="slide-body">
-            <p>Evolusi Cara Pandang Pendidikan Khusus[cite: 1]:</p>
-            <ul>
-              <li><strong>Model Defisit Medis (Lama):</strong> Fokus pada patologi kelainan biologis, mencap anak sebagai sosok cacat, dan cenderung memisahkan (segregasi)[cite: 1].</li>
-              <li><strong>Model Kebutuhan Humanis (Baru):</strong> Fokus pada potensi dan hambatan belajar anak (child-centered), menciptakan lingkungan kelas yang ramah dan adaptif[cite: 1].</li>
-              <li>Mengubah fokus dari "mengobati kekurangan" menjadi "memaksimalkan sisa potensi"[cite: 1].</li>
-            </ul>
-          </div>
-          <div class="speaker-notes-bright">
-            <strong>Catatan Dosen:</strong> Tekankan bahwa pergantian istilah dari "anak cacat" ke "anak berkebutuhan khusus" adalah tonggak pemuliaan martabat hak asasi manusia dalam pendidikan nasional[cite: 1].
-          </div>
-        </div>
-
-        <!-- SLIDE 5 -->
-        <div class="slide-item">
-          <span class="slide-indicator" style="color: var(--gz-blue); font-weight: 800; font-size: 0.95rem;">Slide 5 dari 6 • Klasifikasi Kebutuhan</span>
-          <h2>Rumpun Dimensi Kebutuhan Khusus</h2>
-          <div class="slide-body">
-            <p>Tiga Poros Utama Hambatan Perkembangan (Bab I)[cite: 1]:</p>
-            <ul>
-              <li><strong>Kelainan Fisik &amp; Sensorik:</strong> Tunanetra, tunarungu, tunawicara, dan kelainan motorik tunadaksa[cite: 1].</li>
-              <li><strong>Kelainan Mental &amp; Emosional:</strong> Tunalaras, gangguan regulasi tingkah laku, ADHD, dan spektrum autisme[cite: 1].</li>
-              <li><strong>Kelainan Akademik:</strong> Tunagrahita, lamban belajar (slow learner), berkesulitan belajar spesifik, serta anak berbakat[cite: 1].</li>
-            </ul>
-          </div>
-          <div class="speaker-notes-bright">
-            <strong>Catatan Dosen:</strong> Berikan pengantar singkat bahwa rincian ciri-ciri klinis setiap kelompok ini akan dikupas tuntas pada Bab III dan Bab IV[cite: 1].
-          </div>
-        </div>
-
-        <!-- SLIDE 6 -->
-        <div class="slide-item">
-          <span class="slide-indicator" style="color: var(--gz-orange); font-weight: 800; font-size: 0.95rem;">Slide 6 dari 6 • Aksi &amp; Rangkuman</span>
-          <h2>Closing Thought: Menata Hati Konselor</h2>
-          <div class="slide-body">
-            <p>Fondasi Etis dan Orientasi Sesi Selanjutnya[cite: 1]:</p>
-            <ul>
-              <li>Layanan bimbingan bukan mengubah anak menjadi orang lain, melainkan memampukan mereka mandiri[cite: 1].</li>
-              <li>Optimalisasi sisa kemampuan (residual capability) adalah kunci kemandirian aktivitas harian (ADL)[cite: 1].</li>
-              <li>Pertemuan 2: Tiga Landasan Utama Perlunya BK (Sudut Pandang Pendidikan, Psikologis, dan Tugas Perkembangan)[cite: 1].</li>
-            </ul>
-          </div>
-          <div class="speaker-notes-bright">
-            <strong>Catatan Dosen:</strong> Instruksikan mahasiswa untuk beralih ke tab menu "Lembar Kerja &amp; Kasus Luas" untuk menyelesaikan dua studi kasus analitis[cite: 1].
-          </div>
-        </div>
-
-        <!-- CONTROLS DENGAN PENATAAN TOMBOL PRESISI -->
-        <footer class="slide-controls">
-          <div style="display: flex; gap: 0.75rem;">
-            <button class="btn-ctrl secondary" onclick="changeSlide(-1)">❮ Sebelumnya</button>
-            <button class="btn-ctrl" style="background: var(--gz-purple); color: #ffffff;" onclick="changeSlide(1)">Selanjutnya ❯</button>
-          </div>
-          <button class="btn-ctrl secondary" onclick="toggleSpeakerNotes()">🎙️ Buka/Tutup Catatan Dosen</button>
-        </footer>
-
+      <!-- V. DAFTAR RUJUKAN -->
+      <div class="matrix-title">
+        <span>📚</span> Sumber Pustaka dan Rujukan Perkuliahan
       </div>
-    </section>
+      <div class="ref-box">
+        <strong>Pustaka Utama:</strong>
+        <ol>
+          <li>Mahmudi, Mohammad Ali, Firlawanti Lestari Baguna, Novy Trisnani, Febriyanti, Suyono, Ika Setya Purwanti, Ni Luh Putu Devhy, Deisye Supit, Diah Warastuti, Ulfa Kurniasih, Fathur Rahman Rustan, Dimas Adika, Rian Dani, Siti Habsari Pratiwi, & Nasrul Fatah. 2023. <em>Teknik Penulisan Karya Ilmiah: Jurus Mahir Penulisan Karya Ilmiah</em>[cite: 1]. Editor: Dr. Ambo Dalle, M.Hum. Cetakan Pertama[cite: 1]. Deli Serdang: PT. Mifandi Mandiri Digital[cite: 1]. ISBN: 978-623-88824-5-8[cite: 1].</li>
+        </ol>
+        <br>
+        <strong>Pustaka Pendukung dan Regulasi Resmi:</strong>
+        <ol>
+          <li>Undang-Undang Republik Indonesia Nomor 20 Tahun 2003 tentang Sistem Pendidikan Nasional (Pasal 25 ayat 1 tentang sanksi pencabutan gelar akibat plagiat)[cite: 1].</li>
+          <li>Undang-Undang Republik Indonesia Nomor 19 Tahun 2002 / UU No. 28 Tahun 2014 tentang Hak Cipta[cite: 1].</li>
+          <li>Peraturan Menteri Pendidikan Nasional Republik Indonesia Nomor 17 Tahun 2010 tentang Pencegahan dan Penanggulangan Plagiat di Perguruan Tinggi[cite: 1].</li>
+          <li>Direktorat Jenderal Pendidikan Tinggi (Ditjen Dikti) Kemendikbudristek. 2019. <em>Pedoman Operasional Penilaian Angka Kredit Kenaikan Jabatan Akademik Dosen (PO PAK)</em>[cite: 1].</li>
+          <li>Panduan Pengindeksan Jurnal Ilmiah Nasional (SINTA - Science and Technology Index) dan Panduan Evaluasi Jurnal Internasional (Think.Check.Submit / Scopus / Web of Science)[cite: 1].</li>
+        </ol>
+      </div>
 
-  </main>
+      <!-- VI. PENGESAHAN DOKUMEN RPS -->
+      <div class="sign-container">
+        <div class="sign-box">
+          <p>Disusun oleh:<br><strong>Dosen Pengembang RPS</strong></p>
+          <br><br><br>
+          <p>(...........................................................)</p>
+          <p style="font-size: 0.8rem; color: var(--text-muted);">NIP/NIDN</p>
+        </div>
+        <div class="sign-box">
+          <p>Diperiksa oleh:<br><strong>Koordinator Rumpun Mata Kuliah</strong></p>
+          <br><br><br>
+          <p>(...........................................................)</p>
+          <p style="font-size: 0.8rem; color: var(--text-muted);">NIP/NIDN</p>
+        </div>
+        <div class="sign-box">
+          <p>Disahkan oleh:<br><strong>Ketua Program Studi</strong></p>
+          <br><br><br>
+          <p>(...........................................................)</p>
+          <p style="font-size: 0.8rem; color: var(--text-muted);">NIP/NIDN</p>
+        </div>
+      </div>
 
-  <!-- ==================== LOGIKA JAVASCRIPT ==================== -->
-  <script>
-    // 1. Pengalihan Tab Navigasi
-    function switchView(targetViewId, buttonElement) {
-      document.querySelectorAll('.view-section').forEach(view => {
-        view.classList.remove('active');
-      });
-      document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.classList.remove('active');
-      });
+    </div>
+  </div>
 
-      document.getElementById(targetViewId).classList.add('active');
-      buttonElement.classList.add('active');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // 2. Web Audio API Synthesizer (Efek Nada Kuis)
-    let audioFxEnabled = true;
-    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-
-    function playTone(type) {
-      if (!audioFxEnabled) return;
-      if (audioCtx.state === 'suspended') {
-        audioCtx.resume();
-      }
-
-      const osc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
-      osc.connect(gain);
-      gain.connect(audioCtx.destination);
-
-      if (type === 'success') {
-        osc.frequency.setValueAtTime(523.25, audioCtx.currentTime); // C5
-        osc.frequency.exponentialRampToValueAtTime(783.99, audioCtx.currentTime + 0.25); // G5
-        gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
-        osc.start();
-        osc.stop(audioCtx.currentTime + 0.3);
-      } else {
-        osc.type = 'sawtooth';
-        osc.frequency.setValueAtTime(220, audioCtx.currentTime); // A3
-        osc.frequency.exponentialRampToValueAtTime(130.81, audioCtx.currentTime + 0.25); // C3
-        gain.gain.setValueAtTime(0.25, audioCtx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
-        osc.start();
-        osc.stop(audioCtx.currentTime + 0.3);
-      }
-    }
-
-    function toggleAudioFx() {
-      audioFxEnabled = !audioFxEnabled;
-      const btn = document.getElementById('sound-btn');
-      if (audioFxEnabled) {
-        btn.classList.add('active');
-        btn.textContent = '🔊 Suara Pengarah: Aktif';
-      } else {
-        btn.classList.remove('active');
-        btn.textContent = '🔇 Suara Pengarah: Hening';
-      }
-    }
-
-    // 3. Evaluasi Mini Game Pertemuan 1
-    function evaluateParadigmGame(choice) {
-      const feedback = document.getElementById('paradigm-feedback');
-      feedback.style.display = 'block';
-
-      if (choice === 'b') {
-        playTone('success');
-        feedback.style.background = '#ede9fe';
-        feedback.style.color = '#5b21b6';
-        feedback.style.border = '1.5px solid #c4b5fd';
-        feedback.innerHTML = '<strong>Tepat Sekali! (Skor 100)</strong><br>Berdasarkan kaidah Febriani et al. (2024), disfungsi motorik fisik tidak dapat dijadikan kesimpulan otomatis bahwa anak mengalami keterbelakangan kognitif[cite: 1]. Paradigma bimbingan konseling modern menuntut adanya asesmen terpadu serta penyediaan sarana adaptif, bukan segregasi yang membatasi hak anak[cite: 1].';
-      } else {
-        playTone('error');
-        feedback.style.background = '#ffedd5';
-        feedback.style.color = '#9a3412';
-        feedback.style.border = '1.5px solid #fed7aa';
-        feedback.innerHTML = '<strong>Kurang Tepat!</strong><br>Pilihan ini mencerminkan prasangka keliru model defisit medis kuno[cite: 1]. Ketidakmampuan organ gerak tidak selalu berarti rusaknya kemampuan berpikir[cite: 1].';
-      }
-    }
-
-    // 4. Pengendali Slide Presentasi Dosen
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide-item');
-
-    function updateSlideDisplay() {
-      slides.forEach((slide, idx) => {
-        slide.classList.toggle('active', idx === currentSlide);
-      });
-    }
-
-    function changeSlide(direction) {
-      currentSlide += direction;
-      if (currentSlide < 0) currentSlide = 0;
-      if (currentSlide >= slides.length) currentSlide = slides.length - 1;
-      updateSlideDisplay();
-    }
-
-    function toggleSpeakerNotes() {
-      const activeSlide = slides[currentSlide];
-      const notes = activeSlide.querySelector('.speaker-notes-bright');
-      if (notes) {
-        notes.style.display = (notes.style.display === 'block') ? 'none' : 'block';
-      }
-    }
-
-    // Navigasi Keyboard untuk Slide
-    document.addEventListener('keydown', (e) => {
-      const presView = document.getElementById('presentation-view');
-      if (presView && presView.classList.contains('active')) {
-        if (e.key === 'ArrowRight' || e.key === ' ') {
-          changeSlide(1);
-        } else if (e.key === 'ArrowLeft') {
-          changeSlide(-1);
-        }
-      }
-    });
-  </script>
 </body>
 </html>
